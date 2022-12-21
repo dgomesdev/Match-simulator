@@ -1,4 +1,4 @@
-# meu-primeiro-app-dio
-Esse projeto tem o objetivo de realizar um desafio para os alunos do curso de Android na DIO
+# Match Simulator
+Simple app with match socres random simulation, using an "API" from Github pages. Versions in EN, FR and PT-BR
 
-![Screenshot_20221217-204509_My first app](https://user-images.githubusercontent.com/114317159/208271866-1d6deef2-a501-4c69-b486-f6c114bade33.png)
+![Screenshot_20221221-184804_Match simulator](https://user-images.githubusercontent.com/114317159/209022382-4ab3f4dc-3c93-4c24-815a-c22c59baff26.png)
