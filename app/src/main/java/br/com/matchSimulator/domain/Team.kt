@@ -1,4 +1,4 @@
-package br.com.myfirstapp.domain
+package br.com.matchSimulator.domain
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

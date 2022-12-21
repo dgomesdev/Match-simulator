@@ -1,4 +1,4 @@
-package br.com.myfirstapp.ui.adapter;
+package br.com.matchSimulator.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,13 +12,13 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import br.com.myfirstapp.databinding.MatchItemBinding;
-import br.com.myfirstapp.domain.Match;
-import br.com.myfirstapp.ui.DetailActivity;
+import br.com.matchSimulator.databinding.MatchItemBinding;
+import br.com.matchSimulator.domain.Match;
+import br.com.matchSimulator.ui.DetailActivity;
 
 public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHolder> {
 
-    private List<Match> matches;
+    private final List<Match> matches;
 
     public MatchesAdapter(List<Match> matches) { this.matches = matches; }
 

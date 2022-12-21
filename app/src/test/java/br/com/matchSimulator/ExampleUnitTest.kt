@@ -1,4 +1,4 @@
-package br.com.myfirstapp
+package br.com.matchSimulator
 
 import org.junit.Test
 

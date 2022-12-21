@@ -1,26 +1,25 @@
-package br.com.myfirstapp.ui;
+package br.com.matchSimulator.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
-import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.google.gson.Gson;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-import br.com.myfirstapp.R;
-import br.com.myfirstapp.data.MatchesApi;
-import br.com.myfirstapp.databinding.ActivityMainBinding;
-import br.com.myfirstapp.domain.Match;
-import br.com.myfirstapp.ui.adapter.MatchesAdapter;
+import br.com.matchSimulator.R;
+import br.com.matchSimulator.data.MatchesApi;
+import br.com.matchSimulator.databinding.ActivityMainBinding;
+import br.com.matchSimulator.domain.Match;
+import br.com.matchSimulator.ui.adapter.MatchesAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -31,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private MatchesApi matchesAPI;
-    private MatchesAdapter matchesAdapter;
+    private MatchesAdapter matchesAdapter = new MatchesAdapter(Collections.emptyList());
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupMatchesList() {
         binding.rvMatches.setHasFixedSize(true);
         binding.rvMatches.setLayoutManager(new LinearLayoutManager(this));
+        binding.rvMatches.setAdapter(matchesAdapter);
         findMatchesFromAPI();
     }
 
@@ -67,20 +68,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupFloatingActionButton() {
-        binding.fabSimulate.setOnClickListener(view ->{
-            view.animate().rotation(360).setDuration(500).setListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    Random random = new Random();
-                    for (int i = 0; i < matchesAdapter.getItemCount(); i++){
-                        Match match = matchesAdapter.getMatches().get(i);
-                        match.getHomeTeam().setScore(random.nextInt(match.getHomeTeam().getStars() + 1));
-                        match.getAwayTeam().setScore(random.nextInt(match.getAwayTeam().getStars() + 1));
-                        matchesAdapter.notifyItemChanged(i);
-                    }
+        binding.fabSimulate.setOnClickListener(view -> view.animate().rotation(360).setDuration(500).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                Random random = new Random();
+                for (int i = 0; i < matchesAdapter.getItemCount(); i++){
+                    Match match = matchesAdapter.getMatches().get(i);
+                    match.getHomeTeam().setScore(random.nextInt(match.getHomeTeam().getStars() + 1));
+                    match.getAwayTeam().setScore(random.nextInt(match.getAwayTeam().getStars() + 1));
+                    matchesAdapter.notifyItemChanged(i);
                 }
-            });
-        });
+            }
+        }));
     }
 
     private void showErrorMessage() {
@@ -91,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         binding.srlMatches.setRefreshing(true);
         matchesAPI.getMatches().enqueue(new Callback<List<Match>>() {
             @Override
-            public void onResponse(Call<List<Match>> call, Response<List<Match>> response) {
+            public void onResponse(@NonNull Call<List<Match>> call, @NonNull Response<List<Match>> response) {
                 if (response.isSuccessful()) {
                     List<Match> matches = response.body();
                     matchesAdapter = new MatchesAdapter(matches);
@@ -102,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Match>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<Match>> call, @NonNull Throwable t) {
                 showErrorMessage();
                 binding.srlMatches.setRefreshing(false);
             }

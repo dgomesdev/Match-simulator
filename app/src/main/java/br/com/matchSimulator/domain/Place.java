@@ -1,4 +1,4 @@
-package br.com.myfirstapp.domain;
+package br.com.matchSimulator.domain;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -19,10 +19,6 @@ public class Place implements Parcelable {
 
     public String getImage() {
         return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     protected Place(Parcel in) {

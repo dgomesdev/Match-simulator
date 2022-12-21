@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'br.com.myfirstapp'
+    namespace 'br.com.matchSimulator'
     compileSdk 33
 
     defaultConfig {
-        applicationId "br.com.myfirstapp"
+        applicationId "br.com.matchSimulator"
         minSdk 21
         targetSdk 33
         versionCode 1

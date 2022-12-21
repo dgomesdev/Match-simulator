@@ -1,8 +1,8 @@
-package br.com.myfirstapp.data;
+package br.com.matchSimulator.data;
 
 import java.util.List;
 
-import br.com.myfirstapp.domain.Match;
+import br.com.matchSimulator.domain.Match;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

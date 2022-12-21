@@ -1,9 +1,9 @@
-package br.com.myfirstapp.ui
+package br.com.matchSimulator.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import br.com.myfirstapp.databinding.ActivityDetailBinding
-import br.com.myfirstapp.domain.Match
+import br.com.matchSimulator.databinding.ActivityDetailBinding
+import br.com.matchSimulator.domain.Match
 import com.bumptech.glide.Glide
 
 class DetailActivity : AppCompatActivity() {
@@ -23,7 +23,7 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        loadMatchFromExtra();
+        loadMatchFromExtra()
     }
 
     private fun loadMatchFromExtra(){
@@ -31,7 +31,7 @@ class DetailActivity : AppCompatActivity() {
             Glide.with(this).load(it.place.image).into(binding.ivPlace)
             supportActionBar?.title = it.place.name
 
-            binding.tvDescription.text = it.matchDescription;
+            binding.tvDescription.text = it.matchDescription
 
             Glide.with(this).load(it.homeTeam.image).into(binding.ivHomeTeam)
             binding.tvHomeTeamName.text = it.homeTeam.name
