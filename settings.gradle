@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "firstApp"
+rootProject.name = "matchSimulator"
 include ':app'

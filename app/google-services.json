@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "359860119466",
+    "project_id": "matchs-simulator",
+    "storage_bucket": "matchs-simulator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359860119466:android:9af6e6ec1002dc2c23edd3",
+        "android_client_info": {
+          "package_name": "br.com.matchSimulator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359860119466-agqkhm77t8fv0qu8mcgfkfnsh3fn26kb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI8AjxBNBLzMzlliDMvpzx41FYX9hafOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359860119466-agqkhm77t8fv0qu8mcgfkfnsh3fn26kb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

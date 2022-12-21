@@ -31,6 +31,7 @@ class DetailActivity : AppCompatActivity() {
             Glide.with(this).load(it.place.image).into(binding.ivPlace)
             supportActionBar?.title = it.place.name
 
+
             binding.tvDescription.text = it.matchDescription
 
             Glide.with(this).load(it.homeTeam.image).into(binding.ivHomeTeam)

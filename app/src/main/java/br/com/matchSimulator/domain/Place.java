@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 public class Place implements Parcelable {
 
     String name;
-    String image;
+    final String image;
 
     public String getName() {
         return name;

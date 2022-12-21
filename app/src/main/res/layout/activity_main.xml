@@ -28,6 +28,6 @@
         android:layout_marginEnd="@dimen/standard_margin"
         android:layout_marginBottom="@dimen/standard_margin"
         android:contentDescription="@string/cd_match_simulator_button"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/ic_simulation" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
