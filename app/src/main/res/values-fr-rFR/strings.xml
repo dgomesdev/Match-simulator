@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Ma première appli</string>
+    <string name="app_name">Simulateur de parties</string>
     <string name="cd_match_simulator_button">Bouton de simulation des parties</string>
     <string name="cd_home_team_image">Image de l\'équipe domicile</string>
     <string name="cd_away_team_image">Image de l\équipe extérieure</string>
+    <string name="errorAPI">Erreur inattendue !</string>
 </resources>
