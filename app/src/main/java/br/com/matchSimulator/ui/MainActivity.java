@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupHTTPClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://dgomesdev.github.io/matches-simulation-api/")
+                .baseUrl("https://dgomesdev.github.io/Match-simulator/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
